@@ -7,6 +7,7 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.jbpm.api.TaskService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -23,6 +24,8 @@ public class UserController {
 	
 	@Autowired
 	private UserService userService;
+	@Autowired
+	private TaskService taskService;
 
 	@RequestMapping("new")
 	public ModelAndView _new(ModelMap model ,HttpServletRequest request,HttpServletResponse response) {
@@ -39,6 +42,7 @@ public class UserController {
 	
 	@RequestMapping("list")
 	public ModelAndView list(HttpServletRequest request,HttpServletResponse response) {
+		System.out.println(taskService.findPersonalTasks("a").size());
 		List<User> list = userService.list();
 		Map<String, Object> model = new HashMap<String, Object>();
 		model.put("userList",  list);
