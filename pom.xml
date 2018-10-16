@@ -1,12 +1,28 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.hyc</groupId>
-  <artifactId>springmvc_hibernate</artifactId>
-  <packaging>war</packaging>
-  <version>0.0.1-SNAPSHOT</version>
-  <name>springmvc_hibernate Maven Webapp</name>
-  <url>http://maven.apache.org</url>
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.hyc</groupId>
+	<artifactId>springmvc_hibernate</artifactId>
+	<packaging>war</packaging>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>springmvc_hibernate Maven Webapp</name>
+	<url>http://maven.apache.org</url>
+	<repositories>
+		<repository>
+			<id>cn.com.pcgroup</id>
+			<url>http://ci.pc.com.cn/nexus/content/groups/public</url>
+			<layout>default</layout>
+		</repository>
+		<repository>
+			<id>org.objectweb.asm</id>
+			<url>http://mirrors.ibiblio.org/pub/mirrors/maven2</url>
+			<layout>default</layout>
+		</repository>
+	</repositories>
+	<properties>
+		<spring.version>3.2.18.RELEASE</spring.version>
+		<jbpm.version>4.4</jbpm.version>
+	</properties>
   <!-- <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -19,6 +35,29 @@
     <finalName>ssh</finalName>
   </build>
   <dependencies>
+  		<!-- JBPM 依赖包 -->
+		<dependency>
+			<groupId>org.jbpm.jbpm4</groupId>
+			<artifactId>jbpm-api</artifactId>
+			<version>${jbpm.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jbpm.jbpm4</groupId>
+			<artifactId>jbpm-jpdl</artifactId>
+			<version>${jbpm.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jbpm.jbpm4</groupId>
+			<artifactId>jbpm-pvm</artifactId>
+			<version>${jbpm.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jbpm.jbpm4</groupId>
+			<artifactId>jbpm-log</artifactId>
+			<version>${jbpm.version}</version>
+		</dependency>
+		 
+		<!-- JBPM 依赖包 -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-aop</artifactId>

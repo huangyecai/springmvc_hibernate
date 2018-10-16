@@ -16,3 +16,4 @@ Maven 3.2.1
 	此处 User为类名，hql 会根据类名去查找映射
 #整合jbpm4.4
 	添加相应的jar
+#将jbpm4.4的jar交给maven管理
